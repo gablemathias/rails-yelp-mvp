@@ -3,7 +3,12 @@
 <ul>
   <% @restaurants.each do |restaurant| %>
     <li><%= link_to restaurant.name, restaurant_path(restaurant) %>
-
     </li>
   <% end %>
 </ul>
+
+<%= stylesheet_link_tag "button" %>
+
+<button class="btn btn-primary">
+  <%= link_to ("New Restaurant"), new_restaurant_path(@restaurant)%>
+</button>

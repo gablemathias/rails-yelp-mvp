@@ -18,6 +18,21 @@ class RestaurantsController < ApplicationController
     redirect_to restaurant_path(@restaurant)
   end
 
+  def edit
+  end
+
+  def update
+    @restaurant.update(restaurant_params)
+
+    redirect_to restaurant_path(@restaurant)
+  end
+
+  def destroy
+    @restaurant.destroy
+
+    redirect_to restaurant_path, status: :see_other
+  end
+
   private
 
   def restaurant_params
